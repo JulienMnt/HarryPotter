@@ -459,4 +459,4 @@ if(register == 0){
 else{
     compte.href = "../Pages/compte.html"
 }*/
-
+console.log(window.location.href);
