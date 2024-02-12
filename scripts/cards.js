@@ -333,7 +333,7 @@ if (localStorage.getItem('init') !== "0" ) {
     localStorage.setItem("register",registerstring); 
     localStorage.setItem("init", "0");
 }
-if(window.location.href === "file:///C:/Users/Julien%20Menet/OneDrive%20-%20De%20Vinci/Bureau/Cours/Ann%C3%A9e%201/Mi%20parcours/Axe%20CDI/Rendu/Pages/packs.html"){
+if(window.location.href === "file:///C:/Users/Julien%20Menet/Documents/GitHub/HarryPotter/Pages/pack.html"){
     let cardstring = localStorage.getItem("cards");
     let cards = JSON.parse(cardstring);
     let comptestring = localStorage.getItem("comptes");
@@ -375,7 +375,7 @@ if(window.location.href === "file:///C:/Users/Julien%20Menet/OneDrive%20-%20De%2
     localStorage.setItem("inventaire",inventairestring);
 
 }
-if(window.location.href === "file:///C:/Users/Julien%20Menet/OneDrive%20-%20De%20Vinci/Bureau/Cours/Ann%C3%A9e%201/Mi%20parcours/Axe%20CDI/Rendu/Pages/openpack.html"){
+if(window.location.href === "file:///C:/Users/Julien%20Menet/Documents/GitHub/HarryPotter/Pages/openpack.html"){
     let cardstring = localStorage.getItem("cards");
     let cards = JSON.parse(cardstring);
     let comptestring = localStorage.getItem("comptes");
@@ -403,7 +403,7 @@ if(window.location.href === "file:///C:/Users/Julien%20Menet/OneDrive%20-%20De%2
     inventairestring = JSON.stringify(inventaire);
     localStorage.setItem("inventaire",inventairestring);
 }
-if(window.location.href === "file:///C:/Users/Julien%20Menet/OneDrive%20-%20De%20Vinci/Bureau/Cours/Ann%C3%A9e%201/Mi%20parcours/Axe%20CDI/Rendu/Pages/inventaire.html"){
+if(window.location.href === "file:///C:/Users/Julien%20Menet/Documents/GitHub/HarryPotter/Pages/inventaire.html"){
     let cardstring = localStorage.getItem("cards");
     let cards = JSON.parse(cardstring);
     let comptestring = localStorage.getItem("comptes");
@@ -425,7 +425,7 @@ if(window.location.href === "file:///C:/Users/Julien%20Menet/OneDrive%20-%20De%2
     inventairestring = JSON.stringify(inventaire);
     localStorage.setItem("inventaire",inventairestring);
 }
-if(window.location.href === "file:///C:/Users/Julien%20Menet/OneDrive%20-%20De%20Vinci/Bureau/Cours/Ann%C3%A9e%201/Mi%20parcours/Axe%20CDI/Rendu/Pages/register.html"){
+if(window.location.href === "file:///C:/Users/Julien%20Menet/Documents/GitHub/HarryPotter/Pages/register.html"){
     let btncreate = document.querySelector("btcreate");
     let cardstring = localStorage.getItem("cards");
     let cards = JSON.parse(cardstring);
