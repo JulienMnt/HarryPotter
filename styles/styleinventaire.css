@@ -1,0 +1,19 @@
+
+div.ligne{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5vh;
+    margin-left: 10vw;
+    margin-right: 10vw;
+}
+img.ca{
+    width: 12vw;
+    height: auto;
+}
+h2.titrinv{
+    margin: 25px;
+    font-size: 300%;
+    color: white;
+    display: flex;
+    justify-content: center;
+}

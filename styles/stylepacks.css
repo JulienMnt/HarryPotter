@@ -1,0 +1,25 @@
+section.pac{
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+}
+img.pack{
+    height: 35vh;
+    width: auto;
+}
+h2.titre{
+    font-size: 250%;
+    color: white;
+    display: flex;
+    justify-content: center;
+}
+div.lignepack{
+    width: 100vw;
+    display: flex;
+    justify-content: space-around;
+}
+div.lignepacksolo{
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+}

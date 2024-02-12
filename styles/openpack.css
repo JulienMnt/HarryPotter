@@ -1,0 +1,16 @@
+div.ligne{
+    display: flex;
+    justify-content: space-around;
+}
+img.carte{
+    height: 40vh;
+    width: auto;
+}
+h2.obtain{
+    width: 100vw;
+    font-size: 200%;
+    color: white;
+    display: flex;
+    justify-content: center;
+    margin: 5vh;
+}

@@ -1,0 +1,36 @@
+div.top{
+    height: 15vh;
+}
+div.centre{
+    border: 2px solid;
+
+    margin-left: 30%;
+    margin-right: 30%;
+    background-color: rgba(255, 255, 255, 0.525);
+}
+div.case{
+    margin: 15px;
+    
+}
+h2{
+    display: flex;
+    justify-content: center;
+    font-size: 200%;
+}
+.submit{
+    margin: 5%;
+    height: 40px;
+    width: 90%;
+    background-color: white;
+    border: 0px;
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
+.verslog{
+    margin: 5%;
+    margin-top: 1%;
+    height: 30px;
+    width: 90%;
+    background-color: grey;
+    border: 0px;
+}
