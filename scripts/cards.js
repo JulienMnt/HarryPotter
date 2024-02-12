@@ -264,7 +264,7 @@ let sectioninv = document.getElementById("sectinv");
 //afficherinventaire(inv);
 //console.log(window.location.href);
 
-if (localStorage.getItem('init') !== "1" ) {
+if (localStorage.getItem('init') !== "0" ) {
 
     let cards =[];
     let comptes = [];
@@ -331,9 +331,9 @@ if (localStorage.getItem('init') !== "1" ) {
     localStorage.setItem("cards", cardstring);
     localStorage.setItem("comptes",comptestring);
     localStorage.setItem("register",registerstring); 
-    localStorage.setItem("init", "1");
+    localStorage.setItem("init", "0");
 }
-if(window.location.href === "file:///C:/Users/Julien%20Menet/Documents/GitHub/HarryPotter/Pages/pack.html"){
+if(window.location.href === "file:///C:/Users/julie/Documents/GitHub/HarryPotter/Pages/packs.html"){
     let cardstring = localStorage.getItem("cards");
     let cards = JSON.parse(cardstring);
     let comptestring = localStorage.getItem("comptes");
@@ -375,7 +375,7 @@ if(window.location.href === "file:///C:/Users/Julien%20Menet/Documents/GitHub/Ha
     localStorage.setItem("inventaire",inventairestring);
 
 }
-if(window.location.href === "file:///C:/Users/Julien%20Menet/Documents/GitHub/HarryPotter/Pages/openpack.html"){
+if(window.location.href === "file:///C:/Users/julie/Documents/GitHub/HarryPotter/Pages/openpack.html"){
     let cardstring = localStorage.getItem("cards");
     let cards = JSON.parse(cardstring);
     let comptestring = localStorage.getItem("comptes");
@@ -403,7 +403,7 @@ if(window.location.href === "file:///C:/Users/Julien%20Menet/Documents/GitHub/Ha
     inventairestring = JSON.stringify(inventaire);
     localStorage.setItem("inventaire",inventairestring);
 }
-if(window.location.href === "file:///C:/Users/Julien%20Menet/Documents/GitHub/HarryPotter/Pages/inventaire.html"){
+if(window.location.href === "file:///C:/Users/julie/Documents/GitHub/HarryPotter/Pages/inventaire.html"){
     let cardstring = localStorage.getItem("cards");
     let cards = JSON.parse(cardstring);
     let comptestring = localStorage.getItem("comptes");
@@ -425,7 +425,7 @@ if(window.location.href === "file:///C:/Users/Julien%20Menet/Documents/GitHub/Ha
     inventairestring = JSON.stringify(inventaire);
     localStorage.setItem("inventaire",inventairestring);
 }
-if(window.location.href === "file:///C:/Users/Julien%20Menet/Documents/GitHub/HarryPotter/Pages/register.html"){
+if(window.location.href === "file:///C:/Users/julie/Documents/GitHub/HarryPotter/Pages/register.html"){
     let btncreate = document.querySelector("btcreate");
     let cardstring = localStorage.getItem("cards");
     let cards = JSON.parse(cardstring);
