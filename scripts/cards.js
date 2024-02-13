@@ -264,7 +264,7 @@ let sectioninv = document.getElementById("sectinv");
 //afficherinventaire(inv);
 //console.log(window.location.href);
 
-if (localStorage.getItem('init') !== "0" ) {
+if (localStorage.getItem('init') !== "1" ) {
 
     let cards =[];
     let comptes = [];
@@ -331,7 +331,7 @@ if (localStorage.getItem('init') !== "0" ) {
     localStorage.setItem("cards", cardstring);
     localStorage.setItem("comptes",comptestring);
     localStorage.setItem("register",registerstring); 
-    localStorage.setItem("init", "0");
+    localStorage.setItem("init", "1");
 }
 if(window.location.href === "file:///C:/Users/julie/Documents/GitHub/HarryPotter/Pages/packs.html"){
     let cardstring = localStorage.getItem("cards");
