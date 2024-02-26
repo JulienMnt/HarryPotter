@@ -440,7 +440,7 @@ if(window.location.href === "file:///C:/Users/julie/Documents/GitHub/HarryPotter
     btncreate.addEventListener("click", function() {
         e.preventDefault();
         let x = createacount(); // Appel à la fonction createacount()
-        console.log(x); // Afficher x dans la console après l'exécution de createacount()
+        console.log(x); // Afficher x dans la console après l'exécution de createacount().
     });
 
     cardstring = JSON.stringify(cards);
