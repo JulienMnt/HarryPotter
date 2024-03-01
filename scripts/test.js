@@ -4,46 +4,33 @@ function rand(min, max) {
   max++;
   return Math.floor(Math.random() * (max - min) + min);
 }
+let button = document.getElementById("button");
 
-function idtoslug(id){
-  switch(id){
-    case 1:
-      return "harry-potter";
-    case 2:
-      return "ron-weasley";
-    case 3:
-      return "draco-malfoy";
-    case 4:
-      return "hermione-granger";
-    case 5:
-      return "minerva-mcgonagall";
-    case 6:
-      return "severus-snape";
-    case 7:
-      return "albus-dumbledore";
-    case 8:
-      return "lord-voldemort";
-    case 9:
-      return "sirius-black";
-    case 10:
-      return "bellatrix-lestrange";
-    case 11:
-      return "neville-longbottom";
-    case 12:
-      return "cedric-diggory";
-    case 13:
-      return "gregory-goyle";
-    case 14:
-      return "vincent-crabble";
-    case 15:
-      return ""          
+let inventaire = [];
+
+async function opencard(maison){
+  let response = await fetch('https://hp-api.onrender.com/api/characters', {
+      headers: {
+          'Origin': 'https://hp-api.onrender.com/api/characters'
+      }
+  });
+
+  if (response.ok) {
+      let data = await response.json();
+      let numAleatoire = Math.floor(Math.random() * 24);
+      let randomCharacter = data[numAleatoire];
+      if (maison == 0){
+          inventaire.push(randomCharacter.id);
+      }
+      else{
+          if(randomCharacter.house == maison){
+          inventaire.push(randomCharacter.id);
+          }
+          else{
+              opencard(maison);
+          }
+      }
+      console.log(inventaire);
   }
 }
-
-function opencard(){
-  let x = rand(1,30);
-  let y = fetch("https://hp-api.lainocs.fr//characters")
-    .then((response) => response.json())
-  return y[x];
-}
-console.log(opencard());
+button.addEventListener("click", opencard(0));

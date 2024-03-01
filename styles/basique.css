@@ -45,7 +45,7 @@ a.hder{
 }
 a.hder:hover{
     background-color: black;
-    color: white;
+    color: rgba(255, 255, 255);
     transition-duration: 1s;
 }
 h2.hder{
