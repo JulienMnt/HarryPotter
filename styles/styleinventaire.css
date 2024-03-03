@@ -6,9 +6,20 @@ div.ligne{
     margin-left: 10vw;
     margin-right: 10vw;
 }
+div.cardinv{
+    display: flex;
+    flex-direction: column;
+}
 img.ca{
-    width: 12vw;
-    height: auto;
+    width: 200px;
+    height: 300px;
+    overflow: hidden;
+    transition: all 0.5s;
+}
+img.ca:hover{
+    border: 1px solid black;
+    transform: scale(1.05);
+     
 }
 h2.titrinv{
     margin: 25px;
@@ -16,4 +27,11 @@ h2.titrinv{
     color: white;
     display: flex;
     justify-content: center;
+}
+h3.titre{
+    display: flex;
+    justify-content: center;
+    font-size: 150%;
+    color: white;
+    margin-top: 15px;
 }

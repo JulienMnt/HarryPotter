@@ -5,38 +5,37 @@ function rand(min, max) {
     max++;
     return Math.floor(Math.random() * (max - min) + min);
 }
+function fetchpersonnage(id){
+    return fetch("https://hp-api.onrender.com/api/character/" + id)
+        .then((response) => response.json())
+} // Retourne l'api d'un personnage en particulier avec son id
 
 // Cartes
 
-async function opencard(maison) {
-    inventairestring = localStorage.getItem("inventaire");
-    inventaire = JSON.stringify(inventairestring);
+async function opencard(maison){
     let response = await fetch('https://hp-api.onrender.com/api/characters', {
         headers: {
             'Origin': 'https://hp-api.onrender.com/api/characters'
         }
     });
-
+  
     if (response.ok) {
         let data = await response.json();
         let numAleatoire = Math.floor(Math.random() * 24);
         let randomCharacter = data[numAleatoire];
         if (maison == 0){
-            inventaire.push(randomCharacter.id);
+            return randomCharacter.id;
         }
         else{
-            if(randomCharacter.maison == maison){
-            inventaire.push(randomCharacter.id);
+            if(randomCharacter.house == maison){
+            return randomCharacter.id;
             }
             else{
-                opencard(maison);
+                return opencard(maison);
             }
         }
-        inventairestring = JSON.stringify(inventaire);
-        localStorage.setItem("inventaire", inventairestring);
     }
-}
-
+} //Récupere l'id d'une carte aléatoire avec l'api
 
 
 //Packs
@@ -44,15 +43,65 @@ async function opencard(maison) {
 
 
 
-function openpack(maison){
-    for(i=0;i<3;i++){
-        opencard(maison);
+async function openpack(maison){
+    let tab = [];
+    for(let i=0 ; i<3 ; i++){
+        tab[i] = await opencard(maison);
+        let cont = document.getElementById("cont");
+        let contener = document.createElement("div");
+        let titre = document.createElement("h3");
+        let data = await fetchpersonnage(tab[i]);
+        console.log(data[0].image);
+        let img = document.createElement("img");
+        img.classList.add("carte");
+        titre.classList.add("titre");
+        titre.textContent = data[0].name;
+        img.src = data[0].image;
+        contener.appendChild(img);
+        contener.appendChild(titre);
+        cont.appendChild(contener);
     }
-}
+    return tab;
+} // Avec la function opencard récupere les cartes aléatoires de l'api et les affiches
 
-function afficherpack(){
-
-}
+async function afficherinventaire(inventaire){
+    let nbrcartes = inventaire.length;
+    let conteneur = document.getElementById("sectinv");
+    for(let i=0;i<nbrcartes;i++){
+        let nouvellediv = document.createElement("div");
+        nouvellediv.classList.add("ligne");
+        nouvellediv.id = "ligne"+ i;
+        conteneur.appendChild(nouvellediv);
+        console.log("2");
+    }
+    let j = 0;
+    let k = 0;
+    for(let i=0;i<nbrcartes +1;i++){
+        let x = 0;
+        let newdiv = document.createElement("div");
+        let img = document.createElement("img");
+        let titre = document.createElement("h3");
+        let cont = document.getElementById("ligne" + k);
+        newdiv.classList.add("cardinv");
+        console.log("3");
+        img.classList.add("ca");
+        titre.classList.add("titre");
+        let data = await fetchpersonnage(inventaire[i]);
+        console.log(data);
+        titre.textContent = data[0].name;
+        img.src = data[0].image;
+        cont.appendChild(newdiv);
+        newdiv.appendChild(img);
+        newdiv.appendChild(titre);
+        if(j<4){
+            j++;
+        }
+        else{
+            k++;
+            j=0;
+        }
+    }
+} // Récupere les données de l'inventaire et affiche les images de l'API
 
 //Player 
 
@@ -127,24 +176,19 @@ let sectioninv = document.getElementById("sectinv");
 
 if (localStorage.getItem('init') !== "1" ) {
 
-    let cards =[];
     let comptes = [];
     let register = "false";
     let inventaire = [];
 
     let inventairestring = JSON.stringify(inventaire);
-    let cardstring = JSON.stringify(cards);
     let comptestring = JSON.stringify(comptes);
     let registerstring = JSON.stringify(register);
     localStorage.setItem("inventaire",inventairestring);
-    localStorage.setItem("cards", cardstring);
     localStorage.setItem("comptes",comptestring);
     localStorage.setItem("register",registerstring); 
     localStorage.setItem("init", "1");
 }
-if(window.location.href === "file:///C:/Users/julie/Documents/GitHub/HarryPotter/Pages/packs.html"){
-    let cardstring = localStorage.getItem("cards");
-    let cards = JSON.parse(cardstring);
+if(document.title == "Packs"){
     let comptestring = localStorage.getItem("comptes");
     let comptes = JSON.parse(comptestring);
     let registerstring = localStorage.getItem("register");
@@ -153,30 +197,29 @@ if(window.location.href === "file:///C:/Users/julie/Documents/GitHub/HarryPotter
     let inventaire = JSON.parse(inventairestring);
 
     console.log(register);
+    console.log(document.title);
     let pack = document.getElementById("pack");
     pack.addEventListener("click", function() {
         localStorage.setItem("maison", 0);
     });
     let packg = document.getElementById("packg");
     packg.addEventListener("click", function() {
-        localStorage.setItem("maison", "Gryffondor");
+        localStorage.setItem("maison", "Gryffindor");
     });
     let packs = document.getElementById("packs");
     packs.addEventListener("click", function() {
-        localStorage.setItem("maison", "Serpentard");
+        localStorage.setItem("maison", "Slytherin");
     });
     let packse = document.getElementById("packse");
     packse.addEventListener("click", function() {
-        localStorage.setItem("maison", "Serdaigle");
+        localStorage.setItem("maison", "Ravenclaw");
     });
     let packp = document.getElementById("packp");
     packp.addEventListener("click", function() {
-        localStorage.setItem("maison", "Poufsouffle");
+        localStorage.setItem("maison", "Hufflepuff");
     });
 
 
-    cardstring = JSON.stringify(cards);
-    localStorage.setItem("cards", cardstring);
     comptestring = JSON.stringify(comptes);
     localStorage.setItem("comptes",comptestring);
     localStorage.setItem("register",registerstring);
@@ -184,37 +227,32 @@ if(window.location.href === "file:///C:/Users/julie/Documents/GitHub/HarryPotter
     localStorage.setItem("inventaire",inventairestring);
 
 }
-if(window.location.href === "file:///C:/Users/julie/Documents/GitHub/HarryPotter/Pages/openpack.html"){
-    let cardstring = localStorage.getItem("cards");
-    let cards = JSON.parse(cardstring);
-    let comptestring = localStorage.getItem("comptes");
-    let comptes = JSON.parse(comptestring);
-    let registerstring = localStorage.getItem("register");
-    let register = JSON.parse(registerstring);
-    let maison = localStorage.getItem("maison");
-    let inventairestring = localStorage.getItem("inventaire");
-    let inventaire = JSON.parse(inventairestring);
+if(document.title == "Open pack"){
+    (async function () {
+        let comptestring = localStorage.getItem("comptes");
+        let comptes = JSON.parse(comptestring);
+        let registerstring = localStorage.getItem("register");
+        let register = JSON.parse(registerstring);
+        let maison = localStorage.getItem("maison");
+        let inventairestring = localStorage.getItem("inventaire");
+        let inventaire = JSON.parse(inventairestring);
 
-    let a = []
-    console.log(a);
-    //console.log(cards);
-    //console.log(maison);
-    let x = openpack(cards,maison);
-    console.log(x);
-    inventaire.push(x[0],x[1],x[2]);
-    console.log(inventaire);
+        //console.log(cards);
+        //console.log(maison);
+        let x = await openpack(maison);
+        console.log(x);
+        inventaire.push(x[0], x[1], x[2]);
+        console.log(inventaire);
 
-    cardstring = JSON.stringify(cards);
-    localStorage.setItem("cards", cardstring);
-    comptestring = JSON.stringify(comptes);
-    localStorage.setItem("comptes",comptestring);
-    localStorage.setItem("register",registerstring);
-    inventairestring = JSON.stringify(inventaire);
-    localStorage.setItem("inventaire",inventairestring);
+
+        comptestring = JSON.stringify(comptes);
+        localStorage.setItem("comptes", comptestring);
+        localStorage.setItem("register", registerstring);
+        inventairestring = JSON.stringify(inventaire);
+        localStorage.setItem("inventaire", inventairestring);
+    })();
 }
-if(window.location.href === "file:///C:/Users/julie/Documents/GitHub/HarryPotter/Pages/inventaire.html"){
-    let cardstring = localStorage.getItem("cards");
-    let cards = JSON.parse(cardstring);
+if(document.title == "Inventaire"){
     let comptestring = localStorage.getItem("comptes");
     let comptes = JSON.parse(comptestring);
     let registerstring = localStorage.getItem("register");
@@ -226,18 +264,15 @@ if(window.location.href === "file:///C:/Users/julie/Documents/GitHub/HarryPotter
     afficherinventaire(inventaire);
     console.log(inventaire);
 
-    cardstring = JSON.stringify(cards);
-    localStorage.setItem("cards", cardstring);
+
     comptestring = JSON.stringify(comptes);
     localStorage.setItem("comptes",comptestring);
     localStorage.setItem("register",registerstring);
     inventairestring = JSON.stringify(inventaire);
     localStorage.setItem("inventaire",inventairestring);
 }
-if(window.location.href === "file:///C:/Users/julie/Documents/GitHub/HarryPotter/Pages/register.html"){
+if(document.title === "Register"){
     let btncreate = document.querySelector("btcreate");
-    let cardstring = localStorage.getItem("cards");
-    let cards = JSON.parse(cardstring);
     let comptestring = localStorage.getItem("comptes");
     let comptes = JSON.parse(comptestring);
     let registerstring = localStorage.getItem("register");
@@ -251,9 +286,7 @@ if(window.location.href === "file:///C:/Users/julie/Documents/GitHub/HarryPotter
         let x = createacount(); // Appel à la fonction createacount()
         console.log(x); // Afficher x dans la console après l'exécution de createacount().
     });
-
-    cardstring = JSON.stringify(cards);
-    localStorage.setItem("cards", cardstring);
+    
     comptestring = JSON.stringify(comptes);
     localStorage.setItem("comptes",comptestring);
     localStorage.setItem("register",registerstring);

@@ -5,8 +5,9 @@ function rand(min, max) {
   return Math.floor(Math.random() * (max - min) + min);
 }
 let button = document.getElementById("button");
+let bt = document.getElementById("bt");
 
-let inventaire = [];
+let inv = [];
 
 async function opencard(maison){
   let response = await fetch('https://hp-api.onrender.com/api/characters', {
@@ -20,17 +21,24 @@ async function opencard(maison){
       let numAleatoire = Math.floor(Math.random() * 24);
       let randomCharacter = data[numAleatoire];
       if (maison == 0){
-          inventaire.push(randomCharacter.id);
+          return randomCharacter.id;
       }
       else{
           if(randomCharacter.house == maison){
-          inventaire.push(randomCharacter.id);
+          return randomCharacter.id;
           }
           else{
-              opencard(maison);
+              return opencard(maison);
           }
       }
-      console.log(inventaire);
   }
 }
-button.addEventListener("click", opencard(0));
+
+inv.push(opencard(0));
+inv.push(opencard(0));
+inv.push(opencard(0));
+inv.push(opencard(0));
+
+console.log(inv[2]);
+
+
