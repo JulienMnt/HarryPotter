@@ -1,66 +1,65 @@
-
-img{
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
+@font-face {
+    font-family: 'BAUHS93';
+    src: url(../font/BAUHS93.ttf);
 }
-.autr{
-    width: 100vw;
-    height: 70vh;
-
+@font-face {
+    font-family: 'Omnes Medium';
+    src: url(../font/Omnes\ Medium.ttf);
 }
-
-section.pause{
-    margin-left: 2.5vw;
-    width: 70vw;
-    height: 100%;
-    background-color: white;
+main{
+    background-color: rgba(0, 0, 0, 0.5);
 }
-h2.pres{
-    margin-top: 10vh;
+.ttrindex{
+    font-family: 'Omnes Medium';
     font-size: 300%;
-    margin-bottom: 10vh;
-}
-p{
-    font-size: 120%;
-}
-div.sombre{
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.6);
-}
-
-.pres{
     color: white;
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
 }
-.box{
+.topindex{
+    display: flex;
+}
+.txt{
+    width: 65%;
+    margin-left: 75px;
+    font-family: 'BAUHS93';
+    color: white;
+    font-size: 150%;
+    text-align: justify;
     display: flex;
     align-items: center;
-    overflow-y: hidden;
-    
 }
-img.carte{
-    margin-right: 5vw;
-    height: 20vw;
-    width: auto;
+.dessin{
+    width: 35%;
+    height: fit-content;
+    display: flex;
+    margin-right: 75px;
+    margin-left: 75px;
 }
-
-div.text{
-    margin-top: 5vh;
-    margin-right: 5vw;
-    margin-left: 5vw;
-    height: 100%;
+.txtp{
     width: 75%;
+    margin-left: 150px;
+    font-family: 'BAUHS93';
+    color: white;
+    font-size: 150%;
+    text-align: justify;
+    display: flex;
+    align-items: center;
 }
-div.photo{
-    height: 25vw;
-    width: 25vw;
-    margin-right: 5vh;
-    background-color: orange;
+.btn{
+    margin-left: 40%;
+    margin-top: 25px;
+    background-color: white;
+    margin-bottom: 50px;
+    width: 20%;
+    height: 40px;
+    transition-duration: 1s;
 }
-div.photos{
-    height: 25vw;
-    width: 25vw;
-    margin-right: 5vh;
-    overflow: hidden;
+.btn:hover{
+    background-color: black;
+    color: white;
+}
+.ddd{
+    margin-top: 25px;
 }
