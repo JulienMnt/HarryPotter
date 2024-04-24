@@ -1,44 +1,37 @@
 "use strict";
 
 function rand(min, max) {
-  max++;
-  return Math.floor(Math.random() * (max - min) + min);
-}
-let button = document.getElementById("button");
-let bt = document.getElementById("bt");
-
-let inv = [];
-
-async function opencard(maison){
-  let response = await fetch('https://hp-api.onrender.com/api/characters', {
-      headers: {
-          'Origin': 'https://hp-api.onrender.com/api/characters'
-      }
-  });
-
-  if (response.ok) {
-      let data = await response.json();
-      let numAleatoire = Math.floor(Math.random() * 24);
-      let randomCharacter = data[numAleatoire];
-      if (maison == 0){
-          return randomCharacter.id;
-      }
-      else{
-          if(randomCharacter.house == maison){
-          return randomCharacter.id;
-          }
-          else{
-              return opencard(maison);
-          }
-      }
-  }
+    return Math.floor(Math.random() * (max - min) + min);
 }
 
-inv.push(opencard(0));
-inv.push(opencard(0));
-inv.push(opencard(0));
-inv.push(opencard(0));
+async function opencard(house){
+    let data = [];
+    let card = [];
+    let response = await fetch("https://hp-api.lainocs.fr/characters",{
+        method: "GET",
+        headers: {
+            "Content-Type": "application/json",
+            "Accept": "application/json"
+        }}
+    )
+    if (response.ok) {
+        data = await response.json();
+    }
+    let slug = data[rand(0,30)].slug
+    let response2 = await fetch(`https://hp-api.lainocs.fr/characters/${slug}`,{
+        method: "GET",
+        headers: {
+            "Content-Type": "application/json",
+            "Accept": "application/json"
+        }
+    })
+    if (response2.ok) {
+        card = await response2.json();
+    }
+    if((card.house != house || card.house == "") && card.house != 0) opencard(house);
+    return card;
+}
 
-console.log(inv[2]);
+//function openpack{}
 
-
+console.log(opencard('Slytherin'));

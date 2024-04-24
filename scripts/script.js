@@ -35,7 +35,9 @@ async function opencard(maison){
             }
         }
     }
-} //Récupere l'id d'une carte aléatoire avec l'api  
+} //Récupere l'id d'une carte aléatoire avec l'api
+
+
 
 
 //Packs
