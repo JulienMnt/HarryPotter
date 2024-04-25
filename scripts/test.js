@@ -26,7 +26,7 @@ async function opencard(house){
         }
     })
     if (response2.ok) {
-        card = await response2.json();
+        card = response2.json();
     }
     if((card.house != house || card.house == "") && card.house != 0) opencard(house);
     return card;

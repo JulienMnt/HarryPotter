@@ -27,3 +27,11 @@ model inventory {
   idUser String @unique
   updated_at DateTime @updatedAt
 }
+
+model light{
+  id Int @id @default(autoincrement())
+  house String
+  red Int
+  green Int
+  blue Int
+}
