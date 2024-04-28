@@ -35,3 +35,9 @@ model light{
   green Int
   blue Int
 }
+
+model card {
+  id Int @id @default(autoincrement())
+  name String
+  house String
+}

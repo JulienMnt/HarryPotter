@@ -2,9 +2,23 @@ import { PrismaClient } from "@prisma/client";
 const prisma = new PrismaClient();
 
 const onLight = async (req,res) => {
-    prisma.light.findUnique({where : {house : req.headers["house"]}})
-    .then(light => res.status(200).json(light))
+    console.log(req.headers.house);
+    prisma.light.findMany({
+        where: {house : req.headers.house}
+    })
+    .then(light => res.json(light))
+    .catch(error => {
+        console.log(error);
+        res.status(400).json(error); 
+    });
+}
+
+const postCard = async (req, res) => {
+    const {house, name} = req.body;
+    prisma.card.create({data : {house, name}})
+    .then(card => res.status(200).json(card))
     .catch(error => res.status(400).json(error));
 }
 
-export {onLight};
+// Il faut que j'exporte toute l'api et pas juste un light 
+export {onLight, postCard};
