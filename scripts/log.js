@@ -7,7 +7,7 @@ form.addEventListener('submit', async (e)=> {
     
     let data = { email: email, password: password};
     console.log(data);
-    fetch('http://10.188.13.73:3001/auth/login',{
+    fetch('http://localhost:3001/auth/login',{
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data),
