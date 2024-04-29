@@ -2,10 +2,9 @@ let token = '';
 token = localStorage.getItem('token', token);
 console.log(token);
 
-fetch('http://10.188.13.73:3001/user', {
+fetch('http://localhost:3001/user', {
         method: 'GET',
         headers: { 'Content-Type': 'application/json', 'x-acces-token' : token},
-        
         })
         .then(response => response.json())
         .then(json => {
