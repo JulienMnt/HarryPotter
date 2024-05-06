@@ -18,9 +18,10 @@ const getInventory = (req, res) => {
 
 const getInventoryUser = (req, res) => {
     console.log(req.headers)
-    prisma.inventory.findMany({where : {idUser : parseInt(req.headers.iduser)}})
+    console.log(req.headers.iduser)
+    prisma.inventory.findUnique({where : {idUser : JSON.parse(req.headers.iduser)}})
     .then(inventory => {res.status(200).json(inventory);})
-    .catch(error => res.status(400).json(error));
+    .catch(error => console.log(error),  res.status(400).json(error));
 }
 
 const addCard = (req, res) => {

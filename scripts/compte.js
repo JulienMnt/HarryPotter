@@ -1,9 +1,7 @@
 let token = '';
 token = localStorage.getItem('token', token);
 console.log(token);
-if (token === null) {
-    window.location.href = "../Pages/login.html";
-}
+
 
 fetch('http://localhost:3001/user', {
         method: 'GET',
@@ -12,6 +10,10 @@ fetch('http://localhost:3001/user', {
         .then(response => response.json())
         .then(json => {
             console.log(json);
+            console.log(json.pseudo);
+            if (json.pseudo === undefined) {
+                window.location.href = "../Pages/login.html";
+            }
             let bvn = document.getElementById('bvn');
             bvn.textContent = 'Bonjour ' + json.pseudo + '!';
             let rst = document.getElementById('rst');
