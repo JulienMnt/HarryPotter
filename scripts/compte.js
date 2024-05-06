@@ -1,6 +1,9 @@
 let token = '';
 token = localStorage.getItem('token', token);
 console.log(token);
+if (token === null) {
+    window.location.href = "../Pages/login.html";
+}
 
 fetch('http://localhost:3001/user', {
         method: 'GET',

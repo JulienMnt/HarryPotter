@@ -16,11 +16,32 @@ const getInventory = (req, res) => {
     .catch(error => res.status(400).json(error));
 }
 
-const addCard = (req, res) => {
-    const {id, card} = req.body;
-    prisma.inventory.update({where : {id}, data : {cards : {push : card}}})
+const getInventoryUser = (req, res) => {
+    console.log(req.headers)
+    prisma.inventory.findMany({where : {idUser : parseInt(req.headers.iduser)}})
     .then(inventory => {res.status(200).json(inventory);})
     .catch(error => res.status(400).json(error));
+}
+
+const addCard = (req, res) => {
+    const {idUser, card} = req.body;
+    prisma.inventory.findUnique({where : {idUser : parseInt(idUser)}})
+    .then(inventory => {
+        console.log('L inventaire',inventory.cards,'00');
+        if(inventory.cards == ""){
+            let updatedCards = [card];  
+            updatedCards = JSON.stringify(updatedCards);
+            return prisma.inventory.update({ where: { idUser : parseInt(idUser) }, data: { cards: updatedCards } });
+        }
+        else {
+            let inv = JSON.parse(inventory.cards);
+            let updatedCards = [...inv, card];
+            updatedCards = JSON.stringify(updatedCards);
+            return prisma.inventory.update({ where: { idUser : parseInt(idUser) }, data: { cards: updatedCards } });
+        }
+    })
+    .then(inventory => {res.status(200).json(inventory);})
+    .catch(error =>res.status(400).json(error));
 }
 
 const deletecard = 0;
@@ -34,4 +55,4 @@ const recupLastCard = (req, res) => {
     .catch(error => res.status(400).json(error));
 }
 
-export {createInventory, getInventory, addCard, recupLastCard};
+export {createInventory, getInventory, getInventoryUser, addCard, recupLastCard};
