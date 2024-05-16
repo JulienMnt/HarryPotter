@@ -1,59 +1,45 @@
-
+@font-face {
+    font-family: 'BAUHS93';
+    src: url(fonts/BAUHS93.ttf);
+}
+@font-face {
+    font-family: 'Omnes Medium';
+    src: url(fonts/Omnes\ Medium.ttf);
+}
 *{
     margin: 0;
     overflow-x: hidden;
 }
-main{
-    margin-top: 10vh;
+a{
+    text-decoration: none;
+    color: black;
 }
 header{
+    height: 100px;
     display: flex;
-    justify-content: flex-start;
-    background-color: white;
-    height: 10vh;
-    width: 100vw;
-    overflow-y: hidden;
-    position: fixed;
+    justify-content: space-around;
 }
 .logo{
-    height: 100%;
+    height: 95%;
     width: auto;
-    overflow-y: hidden;
-    
 }
-.autre{
-    width: 100vw;
-    height: 100vh;
-    background-image:url(../IMG/fond.jpg);
-    background-size: cover;
-    background-position: center;
-    background-position: absolute;
-    background-attachment: fixed;
-}
-section.hder{
-    height: 100%;
-    width: 10%;
-    overflow-y: hidden;
-}
-a.hder{
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: black;
+.nav{
+    border: 3px solid #FFD700;
+    border-radius: 50px;
     text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 20px;
+    height: 50px;
+    width: 175px;
+    text-align: center;
+    color: black;
+    font-family: 'BAUHS93';
+    font-size: 200%;
+    transition: all 0.5s;
 }
-a.hder:hover{
-    background-color: black;
-    color: rgba(255, 255, 255);
-    transition-duration: 1s;
-}
-h2.hder{
-    
-    font-size: 150%;
-}
-a.lo{
-    height: 100%;
-    overflow-y: hidden;
-    margin-right: 2%;
+.nav:hover{
+    background-color: #FFD700;
+    color: white;
 }

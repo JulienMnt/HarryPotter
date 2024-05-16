@@ -13,6 +13,10 @@ const recupererUserId = async () => {
         method: 'GET',
         headers: { 'Content-Type': 'application/json' , 'x-acces-token' : token},
     });
+    if(!response.ok){
+        console.log('error');
+        return;
+    }
     const json = await response.json();
     console.log(json,'de');
     return json;
@@ -42,9 +46,34 @@ const filtrerInventaire = (inventaire,filtre) => {
     console.log(newInventaire);
     return newInventaire;
 };
+function afficherInventaire(inventaire){
+    let container = document.getElementById('container');
+    inventaire.forEach(card => {
+        fetch("https://hp-api.lainocs.fr/characters/" + card)
+        .then(response => response.json())
+        .then(data => {
+            console.log(data);
+            let img = data.image;
+            let name = data.name;
+            console.log(name);
+            const newcard = document.createElement('section');
+            newcard.classList.add('card');
+            newcard.innerHTML = `
+                <img class="imgcard" src="${img}" alt="${name}">  
+                <h2 class="namecard">${name}</h2>
+            `;
+            container.appendChild(newcard);
+        });
+    });
+}
+
 // Usage
 recupererInventaire().then(inventaire => {
-    let ilove = JSON.parse(inventaire);
+    console.log(inventaire.cards);
+    let ilove = JSON.parse(inventaire.cards);
     console.log(ilove);
-    filtrerInventaire(ilove,filtres);
+    afficherInventaire(ilove);
+    //filtrerInventaire(ilove,filtres);
 });
+
+

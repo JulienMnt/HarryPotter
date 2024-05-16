@@ -1,25 +1,8 @@
-section.pac{
-    display: flex;
-    flex-direction: column;
-    margin-top: 20px;
-}
-img.pack{
-    height: 35vh;
-    width: auto;
-}
-h2.titre{
+.titre{
+    margin-top: 25px;
+    width: 100%;
+    text-align: center;
+    font-family: 'BAUHS93';
     font-size: 250%;
-    color: white;
-    display: flex;
-    justify-content: center;
-}
-div.lignepack{
-    width: 100vw;
-    display: flex;
-    justify-content: space-around;
-}
-div.lignepacksolo{
-    width: 100vw;
-    display: flex;
-    justify-content: center;
+    margin-bottom: 50px;
 }

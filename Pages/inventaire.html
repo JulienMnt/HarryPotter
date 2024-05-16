@@ -5,32 +5,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../styles/basique.css">
     <link rel="stylesheet" href="../styles/styleinventaire.css">
+    <link rel="stylesheet" href="../styles/particuliers/carte.css">
     <title>Inventaire</title>
 </head>
 <body class="autre">
     <header>
-        <a href="index.html" class="lo"><img class="logo" src="../IMG/Logo noir.png" alt=""></a>    
-        <section class="hder">
-            <a href="../Pages/packs.html" class="hder">
-                <h2 class="hder">Packs</h2>
-            </a>
-        </section>
-        <section class="hder">
-            <a href="../Pages/inventaire.html" class="hder">
-                <h2 class="hder">Inventaire</h2>
-            </a>
-        </section>
-        <section class="hder">
-            <a href="../Pages/compte.html" class="hder" id="compte">
-                <h2 class="hder">Compte</h2>
-            </a>
-        </section>
-        
+        <a href="index.html" class="nav">Accueil</a>
+        <a href="packs.html"class="nav">Packs</a>
+        <a href="index.html"><img src="../IMG/Logo noir.png" class="logo" alt=""></a>
+        <a href="inventaire.html" class="nav">Inventaire</a>
+        <a href="compte.html" class="nav">Compte</a>
     </header>
     <main class="margetop">
-        <section id="sectinv">
-            <h2 class="titrinv">Inventaire</h2>
-        </section>
+        <h2 class="titre">Ton inventaire</h2>
+        <div class="burger-menu" id="burgermenu">
+            <div class="burger-bar"></div>
+            <div class="burger-bar"></div>
+            <div class="burger-bar"></div>
+        </div>
+        <div class="hidden" id="burgercontenu">
+            <div>Maison</div>
+            <div>Sang</div>
+            <div>Role</div>
+        </div>
+        <div class="search-container">
+            <input type="text" class="search" id="searchInput" placeholder="Cherche un sorcier.." title="Type in a name">
+        </div>
+        <script src="../scripts/annimations/burger.js"></script>
+        <div class="listcard" id="container">
+
+        </div>
     </main>
     <footer></footer>
     <script src="../scripts/inventory.js"></script>

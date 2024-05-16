@@ -1,65 +1,45 @@
 @font-face {
     font-family: 'BAUHS93';
-    src: url(../font/BAUHS93.ttf);
+    src: url(fonts/BAUHS93.ttf);
 }
 @font-face {
     font-family: 'Omnes Medium';
-    src: url(../font/Omnes\ Medium.ttf);
+    src: url(fonts/Omnes\ Medium.ttf);
 }
-main{
-    background-color: rgba(0, 0, 0, 0.5);
+@keyframes slideAnimation {
+    0% {
+      transform: translateX(0); /* Pas de décalage au début */
+    }
+    100% {
+      transform: translateX(50px); /* Décalage de 50 pixels à droite */
+    }
+  }
+
+.slider{
+    width: 100%;
+    overflow: hidden;
+    position: relative;
 }
-.ttrindex{
-    font-family: 'Omnes Medium';
-    font-size: 300%;
-    color: white;
-    display: flex;
-    justify-content: center;
-    margin-top: 50px;
+.slideun{
+    width: 100%;
+    position: absolute;
 }
-.topindex{
-    display: flex;
+.slidedeux{
+    width: 100%;
+    position: absolute;
 }
-.txt{
-    width: 65%;
-    margin-left: 75px;
-    font-family: 'BAUHS93';
-    color: white;
-    font-size: 150%;
-    text-align: justify;
-    display: flex;
-    align-items: center;
+.slidetrois{
+    width: 100%;
+    position: absolute;
 }
-.dessin{
-    width: 35%;
-    height: fit-content;
-    display: flex;
-    margin-right: 75px;
-    margin-left: 75px;
+.slider.active .slide{
+    animation: slideAnimation 1s infinite alternate;
 }
-.txtp{
-    width: 75%;
-    margin-left: 150px;
-    font-family: 'BAUHS93';
-    color: white;
-    font-size: 150%;
-    text-align: justify;
-    display: flex;
-    align-items: center;
-}
-.btn{
-    margin-left: 40%;
+.dispo{
     margin-top: 25px;
-    background-color: white;
+    width: 100%;
+    text-align: center;
+    font-family: 'BAUHS93';
+    font-size: 250%;
     margin-bottom: 50px;
-    width: 20%;
-    height: 40px;
-    transition-duration: 1s;
-}
-.btn:hover{
-    background-color: black;
-    color: white;
-}
-.ddd{
-    margin-top: 25px;
 }

@@ -2,11 +2,10 @@ div.top{
     height: 15vh;
 }
 div.centre{
-    border: 2px solid;
-
-    margin-left: 30%;
-    margin-right: 30%;
-    background-color: rgba(255, 255, 255, 0.525);
+    border: 5px solid #FFD700;
+    border-radius: 20px;
+    margin-left: 25%;
+    margin-right: 25%;
 }
 div.case{
     margin: 15px;
