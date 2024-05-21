@@ -6,6 +6,9 @@
     font-family: 'Omnes Medium';
     src: url(fonts/Omnes\ Medium.ttf);
 }
+*{
+    overflow-x: hidden;
+}
 .titre{
     margin-top: 25px;
     width: 100%;
