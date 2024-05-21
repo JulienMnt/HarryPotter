@@ -1,3 +1,11 @@
+@font-face {
+    font-family: 'BAUHS93';
+    src: url(fonts/BAUHS93.ttf);
+}
+@font-face {
+    font-family: 'Omnes Medium';
+    src: url(fonts/Omnes\ Medium.ttf);
+}
 div.top{
     height: 15vh;
 }
@@ -20,10 +28,11 @@ h2{
     margin: 5%;
     height: 40px;
     width: 90%;
-    background-color: white;
+    background-color: #FFD700;
     border: 0px;
     margin-bottom: 0px;
     margin-top: 0px;
+    font-family: 'Omnes Medium';
 }
 .verslog{
     margin: 5%;
@@ -32,8 +41,27 @@ h2{
     width: 90%;
     background-color: grey;
     border: 0px;
+    font-family: 'Omnes Medium';
 }
 .bvn{
     font-size: 200%;
     margin-bottom: 20px;
+    font-family: 'BAUHS93';
+}
+.deco{
+    margin-left: 5%;
+    margin-right: 5%;
+    width: 90%;
+    background-color: red;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    border-radius: 25px;
+    padding: 10px;
+    font-family: 'Omnes Medium';
+}
+.rst{
+    font-family: 'Omnes Medium';  
+}
+label{
+    font-family: 'Omnes Medium';
 }

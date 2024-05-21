@@ -1,6 +1,7 @@
 let token = '';
 token = localStorage.getItem('token', token);
 console.log(token);
+btn = document.getElementById('deco');
 
 
 fetch('http://localhost:3001/user', {
@@ -19,4 +20,7 @@ fetch('http://localhost:3001/user', {
             let rst = document.getElementById('rst');
             rst.textContent = 'Email :' + json.email;
     }) 
-
+btn.addEventListener("click", function(){
+    localStorage.setItem('token', '');
+    window.location.href = "../Pages/login.html";
+});

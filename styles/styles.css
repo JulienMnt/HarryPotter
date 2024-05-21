@@ -13,27 +13,27 @@
     100% {
       transform: translateX(50px); /* Décalage de 50 pixels à droite */
     }
-  }
+}
 
-.slider{
-    width: 100%;
-    overflow: hidden;
-    position: relative;
+.t{
+    margin-top: 50px;
+    text-align: center;
+    font-family: 'BAUHS93';
+    font-size: 200%;
+    color: white;
 }
-.slideun{
-    width: 100%;
-    position: absolute;
+.txt{
+    font-family: 'Omnes Medium';
+    margin-top: 50px;
+    font-size: 150%;
+    margin-left: 25px;
+    margin-right: 25px;
+    color: white;
 }
-.slidedeux{
-    width: 100%;
-    position: absolute;
-}
-.slidetrois{
-    width: 100%;
-    position: absolute;
-}
-.slider.active .slide{
-    animation: slideAnimation 1s infinite alternate;
+
+.slide.active {
+    display: block;
+
 }
 .dispo{
     margin-top: 25px;
@@ -42,4 +42,46 @@
     font-family: 'BAUHS93';
     font-size: 250%;
     margin-bottom: 50px;
+}
+.swiper-container-wrapper {
+    /* Appliquez le fond à cet élément */
+    background-image: url('../IMG/fond.jpg');
+    background-repeat: no-repeat;
+    background-size: 110%;
+}
+
+.swiper-container {
+    /* Assurez-vous que le swiper est transparent pour que le fond soit visible */
+    background: transparent;
+    width: 100%;
+    overflow: hidden;
+    height: 500px;
+}
+
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: transparent; /* Assurez-vous que les diapositives sont transparentes pour que le fond soit visible */
+    width: 100%;
+    /* Center slide text vertically */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+
+.bg-shift-1 {
+    background-position: 0px 0;
+    transition: background-position 1s;
+}
+
+.bg-shift-2 {
+    background-position: -50px 0;
+    transition: background-position 1s;
+}
+
+.bg-shift-3 {
+    background-position: -100px 0;
+    transition: background-position 1s;
 }

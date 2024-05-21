@@ -17,6 +17,14 @@
     margin-left: 25px;
     margin-right: 25px;
     margin-bottom: 50px;
+    transition: 0.2s;
+}
+.card:hover{
+    background-color: #FFD700;
+    transition: 0.2s;
+    .namecard{
+        background-color: white;
+    }
 }
 .imgcard{
     width: 175px;

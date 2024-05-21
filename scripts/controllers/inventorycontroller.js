@@ -25,9 +25,10 @@ const getInventoryUser = (req, res) => {
 
 const addCard = (req, res) => {
     const {idUser, card} = req.body;
+    console.log(idUser);
+    
     prisma.inventory.findUnique({where : {idUser : parseInt(idUser)}})
     .then(inventory => {
-        console.log('L inventaire',inventory.cards,'00');
         if(inventory.cards == ""){
             let updatedCards = [card];  
             updatedCards = JSON.stringify(updatedCards);
@@ -37,11 +38,12 @@ const addCard = (req, res) => {
             let inv = JSON.parse(inventory.cards);
             let updatedCards = [...inv, card];
             updatedCards = JSON.stringify(updatedCards);
+            console.log(updatedCards);
             return prisma.inventory.update({ where: { idUser : parseInt(idUser) }, data: { cards: updatedCards } });
         }
     })
     .then(inventory => {res.status(200).json(inventory);})
-    .catch(error =>res.status(400).json(error));
+    .catch(error => res.status(400).json(error));
 }
 
 const deletecard = 0;

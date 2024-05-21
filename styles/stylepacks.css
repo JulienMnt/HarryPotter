@@ -1,8 +1,36 @@
+@font-face {
+    font-family: 'BAUHS93';
+    src: url(fonts/BAUHS93.ttf);
+}
+@font-face {
+    font-family: 'Omnes Medium';
+    src: url(fonts/Omnes\ Medium.ttf);
+}
+
 .titre{
     margin-top: 25px;
     width: 100%;
     text-align: center;
     font-family: 'BAUHS93';
     font-size: 250%;
+    margin-bottom: 50px;
+}
+.deja{
+    font-family: 'BAUHS93';
+    font-size: 200%;
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+.next{
+    font-family: 'Omnes Medium';
+    font-size: 150%;
+    text-align: center;
+}
+.temps{
+    font-family: 'Omnes Medium';
+    font-size: 150%;
+    text-align: center;
+    margin-top: 50px;
     margin-bottom: 50px;
 }

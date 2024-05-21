@@ -1,34 +1,48 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../styles/styles.css">
     <link rel="stylesheet" href="../styles/basique.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
     <link rel="stylesheet" href="../styles/particuliers/carte.css">
     <title>Acceuil</title>
 </head>
 <body class="autre">
     <header>
         <a href="index.html" class="nav">Accueil</a>
-        <a href="packs.html"class="nav">Packs</a>
+        <a href="packs.html" class="nav">Packs</a>
         <a href="index.html"><img src="../IMG/Logo noir.png" class="logo" alt=""></a>
         <a href="inventaire.html" class="nav">Inventaire</a>
         <a href="compte.html" class="nav">Compte</a>
     </header>
     <main>
-        <div class="slider">
-            <div class="slide">
-                <h2>Collectionne tes sorciers préférés</h2>
-                <p>Dans Harry Potter trading card game tu pourra ouvrir un grand nombre de packs pour collectionner les cartes de tes sorciers préférés. Echange, pack et collectionne tes cartes pour esperer devenir le plus grand collectionneur de HPTC.</p>
-            </div>
-            <div class="slidedeux">
-                <h2>Ouvre des packs</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure illo ipsum quia porro, cumque architecto autem assumenda ullam qui atque molestias obcaecati in inventore ab officiis consectetur eius accusamus. Magnam natus laboriosam molestiae fugit voluptatibus eaque, ipsam sed. Repudiandae dolores minus esse! Amet illum sit adipisci nihil qui! Provident, saepe?</p>
-            </div>
-            <div class="slidetrois">
-                <h2>Echange tes cartes</h2>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Pariatur ad exercitationem quae quia ea tenetur quo, saepe aspernatur dolorem eos voluptatibus nihil vero rem quas vitae. Similique fuga, aperiam officiis facere perspiciatis ipsum non accusamus placeat nemo consectetur ea accusantium?</p>
+        <div class="swiper-container-wrapper">
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide un">
+                        <div class="content">
+                            <h2 class="t">Collectionne tes sorciers préférés</h2>
+                            <p class="txt">Dans Harry Potter trading card game tu pourra ouvrir un grand nombre de packs pour collectionner les cartes de tes sorciers préférés. Echange, pack et collectionne tes cartes pour esperer devenir le plus grand collectionneur de HPTC.</p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide deux">
+                        <div class="content">
+                            <h2 class="t">Ouvre des packs</h2>
+                            <p class="txt">Découvrez l'excitation de l'aventure ! Plongez dans l'univers magique du Harry Potter Trading Card Game et vivez des moments palpitants en ouvrant des packs. Avec une variété infinie de cartes représentant vos sorciers préférés, chaque pack est une nouvelle opportunité de collectionner des trésors magiques. Qu'attendez-vous ? Préparez-vous à ouvrir des packs et à explorer le monde envoûtant des sorciers et des sorcières !</p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide trois">
+                        <div class="content">
+                            <h2 class="t">Echange tes cartes</h2>
+                            <p class="txt">Entrez dans le monde captivant du Harry Potter Trading Card Game et découvrez l'excitation de l'échange de cartes ! Avec une communauté de passionnés prête à partager leurs trésors, chaque carte que vous possédez est une opportunité d'interaction et d'aventure. Échangez vos doubles, complétez votre collection et forgez des liens magiques avec d'autres sorciers et sorcières du monde entier. Rejoignez-nous pour une expérience inoubliable d'échange de cartes et d'amitié !</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Vos boutons de navigation ici si vous en avez -->
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
             </div>
         </div>
         <div class="listingcartes">
@@ -156,6 +170,10 @@
                 </section>
             </div>
         </div>
+        <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+        <script src="../scripts/swipper.js"></script>
+        <script src="../scripts/annimations/slider.js"></script>
+        <script src="../scripts/cardclick.js"></script>
     </main>
     <footer></footer>
 </body>

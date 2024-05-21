@@ -1,3 +1,11 @@
+@font-face {
+    font-family: 'BAUHS93';
+    src: url(fonts/BAUHS93.ttf);
+}
+@font-face {
+    font-family: 'Omnes Medium';
+    src: url(fonts/Omnes\ Medium.ttf);
+}
 .titre{
     margin-top: 25px;
     width: 100%;
@@ -23,15 +31,21 @@
     height: 5px;
     background-color: white;
 }
-.hidden{
-    display: none;
+.hidden {
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition:max-height 1s ease, opacity 1s ease;
+    background-color: grey;
 }
 .burgercontenu{
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     background-color: grey;
-}
+    opacity: 1;
+    max-height: 500px; /* Ou définissez une hauteur spécifique */
+    transition:max-height 1s ease;}
 .search{
     margin-top: 25px;
     margin-left: 2%;
@@ -40,4 +54,19 @@
 }
 .search-container{
     margin-bottom: 50px;
+}
+.frm{
+    margin-bottom: 20px;
+    font-family: 'Omnes Medium';
+}
+.reset{
+    margin-left: 2%;
+    margin-right: 5%;
+    width: 93%;
+    background-color: #FFD700;
+    border: none;
+    border-radius: 20px;
+    height: 25px;
+    margin-top: 20px;
+    font-family: 'Omnes Medium';
 }

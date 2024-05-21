@@ -24,9 +24,29 @@
             <div class="burger-bar"></div>
         </div>
         <div class="hidden" id="burgercontenu">
-            <div>Maison</div>
-            <div>Sang</div>
-            <div>Role</div>
+            <form action="" class="frm">
+                <fieldset>
+                    <legend>Maison</legend>
+                    <label for="Gryffondor">Gryffondor</label>
+                    <input type="radio" name="maison" id="Gryffindor">
+                    <label for="Serpentard">Serpentard</label>
+                    <input type="radio" name="maison" id="Slytherin">
+                    <label for="Serdaigle">Serdaigle</label>
+                    <input type="radio" name="maison" id="Ravenclaw">
+                    <label for="Poufsouffle">Poufsouffle</label>
+                    <input type="radio" name="maison" id="Hufflepuff">
+                </fieldset>
+                <fieldset>
+                    <legend>Sang</legend>
+                    <label for="Pur">Sang Pur</label>
+                    <input type="radio" name="sang" id="Pur">
+                    <label for="Mele">Sang Mêlé</label>
+                    <input type="radio" name="sang" id="Mele">
+                    <label for="Moldu">Moldu</label>
+                    <input type="radio" name="sang" id="Moldu">
+                </fieldset>
+                <input type="reset" class='reset' name="" id="reset">
+            </form>
         </div>
         <div class="search-container">
             <input type="text" class="search" id="searchInput" placeholder="Cherche un sorcier.." title="Type in a name">
@@ -38,5 +58,6 @@
     </main>
     <footer></footer>
     <script src="../scripts/inventory.js"></script>
+    <script src="../scripts/cardclick.js"></script>
 </body>
 </html>

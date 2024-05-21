@@ -1,0 +1,66 @@
+@font-face {
+    font-family: 'BAUHS93';
+    src: url(fonts/BAUHS93.ttf);
+}
+@font-face {
+    font-family: 'Omnes Medium';
+    src: url(fonts/Omnes\ Medium.ttf);
+}
+
+.nm{
+    margin-top: 25px;
+    text-align: center;
+    font-family: 'BAUHS93';
+    font-size: 400%;
+}
+
+.infos{
+    font-family: 'Omnes Medium';
+    font-size: 200%;
+    border: 5px solid #FFD700;
+    border-radius: 25px;
+    padding: 25px;
+    width: 400px;
+    margin-bottom: 100px;
+}
+.dv{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 50px;
+}
+.card{
+    width: 300px; /* 200px * 1.5 */
+    height: 450px; /* 300px * 1.5 */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 7.5px solid #FFD700; /* 5px * 1.5 */
+    border-radius: 37.5px; /* 25px * 1.5 */
+    margin-left: 37.5px; /* 25px * 1.5 */
+    margin-right: 37.5px; /* 25px * 1.5 */
+    margin-bottom: 75px; /* 50px * 1.5 */
+    transition: 0.2s;
+}
+.card:hover{
+    background-color: #FFD700;
+    transition: 0.2s;
+}
+.card:hover .namecard{
+    background-color: white;
+}
+.imgcard{
+    width: 262.5px;
+    height: 337.5px;
+    overflow: hidden;
+}
+.namecard{
+    font-family: 'Omnes Medium';
+    background-color: #FFD700;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 7.5px;
+    padding-top: 7.5px;
+    border-radius: 30px;
+    margin-top: 22.5px;
+    font-size: 165%;
+}
